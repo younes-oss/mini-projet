@@ -10,12 +10,10 @@ int main() {
     char auteurs[MAX_LIVRES][MAX_AUTEUR];
     float prix[MAX_LIVRES];
     int quantites[MAX_LIVRES];
-    int nbLivres = 0;  // Nombre de livres actuellement en stock
-
+    int nbLivres = 0;
     int choix;
 
     do {
-        // Affichage du menu
         printf("\n--- Menu de Gestion de Stock ---\n");
         printf("1. Ajouter un livre\n");
         printf("2. Afficher tous les livres\n");
@@ -26,20 +24,38 @@ int main() {
         printf("0. Quitter\n");
         printf("Choisissez une option : ");
         scanf("%d", &choix);
-
-        // On nettoie le buffer de saisie (important pour les fgets après scanf)
         while(getchar() != '\n');
-
-        // Pour l’instant, on ne fait rien avec le choix
         switch (choix) {
             case 0:
                 printf("Au revoir !\n");
                 break;
+
+            case 1:
+                if (nbLivres >= MAX_LIVRES) {
+                    printf("Stock plein, impossible d'ajouter un nouveau livre.\n");
+                } else {
+                    printf("Entrez le titre du livre (sans espaces) : ");
+                    scanf("%49s", titres[nbLivres]);
+
+                    printf("Entrez l'auteur du livre (sans espaces) : ");
+                    scanf("%49s", auteurs[nbLivres]);
+
+                    printf("Entrez le prix du livre : ");
+                    scanf("%f", &prix[nbLivres]);
+
+                    printf("Entrez la quantite en stock : ");
+                    scanf("%d", &quantites[nbLivres]);
+                    while(getchar() != '\n');
+
+                    nbLivres++;
+                    printf("Livre ajoute avec succes !\n");
+                }
+                break;
+
             default:
                 printf("Option %d non encore implementee.\n", choix);
                 break;
         }
-
     } while (choix != 0);
 
     return 0;
