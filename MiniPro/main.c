@@ -51,6 +51,22 @@ int main() {
                     printf("Livre ajoute avec succes !\n");
                 }
                 break;
+            case 2 :
+                if(nbLivres == 0){
+
+                printf("Aucun livre en stock.\n");
+                } else {
+                    printf("\n--- Liste des livres en stock ---\n");
+                    for(int i = 0 ; i<nbLivres;i++){
+                        printf("Livre %d :\n", i + 1);
+                        printf("  Titre   : %s\n", titres[i]);
+                        printf("  Auteur  : %s\n", auteurs[i]);
+                        printf("  Prix    : %.2f $\n", prix[i]);
+                        printf("  Quantite: %d\n", quantites[i]);
+                        printf("---------------------------\n");
+
+                        }
+                    }
 
             default:
                 printf("Option %d non encore implementee.\n", choix);
