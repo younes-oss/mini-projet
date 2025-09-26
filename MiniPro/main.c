@@ -50,14 +50,14 @@ int main() {
                     while(getchar() != '\n');
 
                     nbLivres++;
-                    printf("Livre ajoute avec succes !\n");
+                    printf("Livre ajoute avec succes !!!!!\n");
 
 
                 }
                 break;
             case 2 :
                 if(nbLivres == 0){
-                    printf("Aucun livre en stock.\n");
+                    printf("Aucun livre en stock\n");
                 } else {
                     printf("\n--- Liste des livres en stock ---\n");
                     for(int i = 0 ; i<nbLivres;i++){
@@ -74,7 +74,7 @@ int main() {
 
             case 5:
                 if (nbLivres == 0) {
-                    printf("Aucun livre � supprimer\n");
+                    printf("Aucun livre a supprimer\n");
                 } else {
                     char titreSupprimer[MAX_TITRE];
                     int trouve = 0;
